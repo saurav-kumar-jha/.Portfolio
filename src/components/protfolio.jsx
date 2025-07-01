@@ -40,7 +40,7 @@ export const Portfolio = ()=> {
         <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-8">
 
         <div className="h-full w-full flex items-center justify-center md:w-[40%] ml-4 " >
-            <motion.img src="/demo-img.webp" alt="Saurav Kumar Jha" className="w-40 sm:w-48 md:w-56 h-40 sm:h-48 md:h-56 cursor-pointer rounded-full border-4 border-[#1f2c42] shadow-[0_2px_50px_4px_rgba(35,44,66,0.8)] hover:shadow-[0_2px_90px_4px_rgba(35,44,66,0.8)] transition-transform duration-500 hover:scale-105 object-cover animate-glow" initial={{ opacity: 0, scale: 0.8 }}
+            <motion.img src="/demo-img.webp" alt="Saurav Kumar Jha" className="w-40 sm:w-48 md:w-56 h-40 sm:h-48 md:h-56 cursor-pointer rounded-full border-4 border-[#1f2c42] shadow-[0_2px_50px_4px_rgba(35,44,66,0.8)] hover:shadow-[0_2px_90px_4px_rgba(35,44,66,0.8)] transition-transform duration-500 object-cover animate-glow" initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
             />
