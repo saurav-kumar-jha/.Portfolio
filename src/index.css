@@ -1,4 +1,20 @@
 @import "tailwindcss";
+
+@theme {
+  --animate-glow: glowing 2s ease-in-out infinite;
+  --animate-border: border 4s linear infinite;
+
+  @keyframes glowing{
+    0%, 100%{
+      filter: drop-shadow(0 0 0 rgba(59,130,246,0.4)),
+    },
+    50%{
+      filter: drop-shadow(0 0 0 rgba(39,130,222)),
+    },
+  }
+}
+
+
 body{
   overflow-x: hidden;
 }

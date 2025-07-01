@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import './App.css'
 import { Portfolio } from './components/protfolio'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
