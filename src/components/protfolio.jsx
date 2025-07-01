@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion, scale } from "framer-motion";
 import { FaGithub, FaLinkedin, FaEnvelope, FaLaptopCode, FaTools, FaProjectDiagram } from "react-icons/fa";
 import { SiTailwindcss, SiPostgresql, SiSpringboot, SiFirebase, SiMongodb, SiReact, SiHtml5, SiCss3, SiJavascript } from "react-icons/si";
@@ -7,31 +7,43 @@ import { DiJava } from "react-icons/di";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import SkillsSection from "./skills";
 import "../index.css"
+import { FiAlignJustify, FiX } from "react-icons/fi";
 
 export const Portfolio = ()=> {
+    const [show, setshow] = useState(false)
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0a0f1c] to-[#121e36] text-white font-[Poppins]">
       {/* Navbar */}
       <nav className="flex justify-between items-center px-6 py-4 shadow-md bg-[#121e36] font-extrabold text-lg">
         <div className="h-full w-[70vw] mx-auto bg-transparent flex justify-between items-center">
           <h1 className="text-2xl font-bold text-blue-400">Saurav Kumar Jha</h1>
-          <div className="space-x-6">
+          <div className="space-x-6 md:block hidden ">
             <a href="#about" className="hover:text-blue-400 cursor-pointer">About</a>
             <a href="#skills" className="hover:text-blue-400 cursor-pointer">Skills</a>
             <a href="#projects" className="hover:text-blue-400 cursor-pointer">Projects</a>
             <a href="#contact" className="hover:text-blue-400 cursor-pointer">Contact</a>
           </div>
         </div>
+        <div className="flex flex-col items-end md:hidden w-1/2  ">
+            <button className="text-4xl cursor-pointer hover:scale-105  " >{!show ? ( <FiAlignJustify onClick={()=>setshow(true)} />):(<FiX onClick={()=>setshow(false)}/>) }</button>
+            <div className={`w-full flex-col text-center items-center ${show ? "flex" : "hidden"} `}>
+              <a href="#about" className="hover:text-blue-400 cursor-pointer w-full h-auto py-3 px-auto hover:bg-[#121e36ad]">About</a>
+              <a href="#skills" className="hover:text-blue-400 cursor-pointer w-full h-auto py-3 px-auto hover:bg-[#121e36ad] ">Skills</a>
+              <a href="#projects" className="hover:text-blue-400 cursor-pointer w-full h-auto py-3 px-auto hover:bg-[#121e36ad] ">Projects</a>
+              <a href="#contact" className="hover:text-blue-400 cursor-pointer w-full h-auto py-3 px-auto hover:bg-[#121e36ad] ">Contact</a>
+            </div>
+          </div>
       </nav>
 
       {/* Hero Section */}
       <section className="max-w-6xl w-[90vw] mx-auto my-12 p-6 sm:p-10 border border-[#1f2c42] rounded-3xl shadow-lg backdrop-blur bg-[#0a0f1c]/50">
         <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-8">
 
-          <div className="h-full w-full md:w-[40%] ml-4 " >
-            <motion.img src="/demo-img.webp" alt="Saurav Kumar Jha" className="w-40 sm:w-48 md:w-56 h-40 sm:h-48 md:h-56 rounded-full border-4 border-[#1f2c42] shadow-[0_2px_50px_4px_rgba(35,44,66,0.8)] hover:shadow-[0_2px_90px_4px_rgba(35,44,66,0.8)] transition-transform duration-500 hover:scale-105 object-cover animate-glow " initial={{ opacity: 0, scale: 0.8 }}
+        <div className="h-full w-full flex items-center justify-center md:w-[40%] ml-4 " >
+            <motion.img src="/demo-img.webp" alt="Saurav Kumar Jha" className="w-40 sm:w-48 md:w-56 h-40 sm:h-48 md:h-56 cursor-pointer rounded-full border-4 border-[#1f2c42] shadow-[0_2px_50px_4px_rgba(35,44,66,0.8)] hover:shadow-[0_2px_90px_4px_rgba(35,44,66,0.8)] transition-transform duration-500 hover:scale-105 object-cover animate-glow" initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}/>
+              transition={{ duration: 0.8 }}
+            />
           </div>
 
           {/* Text Content */}
@@ -42,7 +54,7 @@ export const Portfolio = ()=> {
 
             <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-6">
               {[SiHtml5, SiCss3, SiJavascript, SiSpringboot, SiPostgresql, SiTailwindcss].map((Icon, i) => (
-                <div key={i} className="p-3 border-2 border-[#1f2c42] shadow-[0_2px_18px_4px_rgba(35,44,66,0.8)] hover:shadow-[0_2px_22px_4px_rgba(35,44,66,0.8)] bg-[#121e36]/30 rounded-xl cursor-pointer animate-glow transition"
+                <div key={i} className="p-3 border-2 border-[#1f2c42] shadow-[0_2px_18px_0px_rgba(35,44,66,0.8)] hover:shadow-[0_2px_22px_4px_rgba(35,44,66,0.8)] bg-[#121e36]/30 rounded-xl cursor-pointer animate-glow transition"
                 >
                   <Icon className="text-2xl text-blue-400" />
                 </div>
