@@ -1,0 +1,22 @@
+@import "tailwindcss";
+body{
+  overflow-x: hidden;
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border {
+  to {
+    --border-angle: 360deg;
+  }
+}
+
+.animate-border {
+  animation: border 4s linear infinite;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
