@@ -33,3 +33,7 @@ body{
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
+
+.rounded-value{
+  border-radius:30% 70% 70% 30% / 30% 30% 70% 70% ;
+}
